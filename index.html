@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorteio de Times</title>
+
+  <!-- Fonte mais moderna -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="app-badge">DC Tech</div>
+
+    <div class="container">
+      <h1>Sorteio de Times</h1>
+      <p class="subtitle" id="subtitle">
+        Cada time terá 6 jogadores (1 goleiro + 5 na linha)
+      </p>
+
+      <label for="playerInput">
+        Adicionar jogador
+      </label>
+
+      <div class="add-player-row">
+        <input
+          id="playerInput"
+          type="text"
+          placeholder="Digite o nome e pressione Enter ou clique em Adicionar"
+        />
+        <button id="addPlayerBtn">Adicionar</button>
+      </div>
+
+      <p class="hint">
+        Dica: adicione todos os jogadores uma vez e depois é só clicar em “Sortear times” sempre que quiser um novo sorteio.
+      </p>
+
+      <div class="players-wrapper">
+        <div class="players-title">Jogadores adicionados</div>
+        <div id="playersList" class="players-list">
+          <!-- chips aqui -->
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="info" id="teamInfo">
+          Mínimo: 6 jogadores para formar 1 time.
+        </div>
+
+        <div class="buttons-group">
+          <div class="team-size-control">
+            <label class="teamSize" for="teamSize">Jogadores por time</label>
+            <input type="number" id="teamSize" min="3" max="20" value="6">
+          </div>
+
+          <button class="btn-secondary" id="clearPlayersBtn">Limpar lista</button>
+          <button id="drawBtn">Sortear times</button>
+        </div>
+      </div>
+
+      <div id="warning" class="warning"></div>
+
+      <div id="results" class="results"></div>
+
+      <div id="reservesBox" class="reserve-box" style="display:none;">
+        <div class="reserve-title">Reservas / sobrando</div>
+        <div id="reservesList" class="reserve-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
